@@ -6,30 +6,37 @@
 
 var express = require("express");
 var path = require("path");
+var friendspath = require("../data/friends.js");
 
 var app = express();
 
   // Displays all characters
-  app.get("/api/friends", function(res) {
-    return res.json(friends);
+exports.apifriend =  app.get("/api/friends", function(req, res) {
+    return res.json(friendspath);
   });
+
+ 
+  
+//exports.usermake = app.post("/api/friends", function(req,res){
+    //var newcharacter = req.body;
+
+    //console.log(newcharacter);
+  
+        // req.body hosts is equal to the JSON post sent from the user
+        // This works because of our body parsing middleware
+//        var newCharacter = req.body;
+      
+        // Using a RegEx Pattern to remove spaces from newCharacter
+        // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+//        newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+      
+//        console.log(newCharacter);
+//      
+//        characters.push(newCharacter);
+//      
+//        res.json(newCharacter);
+})
   
 
-//    $("#addButton").on("click", function(event) {
-//      event.preventDefault();
-//      var createUser = {
-//        name: $("#name").val().trim(),
-//        photo: $("#photo").val().trim(),
-//        scores: [parseInt($("#questionOne").val()),
-//                parseInt($("#questionTwo").val()),
-//                parseInt($("#questionThree").val()),
-//                parseInt($("#questionFour").val()),
-//                parseInt($("#questionFive").val()),
-//                parseInt($("#questionSix").val()),
-//                parseInt($("#questionSeven").val()),
-//                parseInt($("#questionEight").val()),
-//                parseInt($("#questionNine").val()),
-//                parseInt($("#questionTen").val())]
-//      };
 
 //needs post function

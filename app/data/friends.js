@@ -1,5 +1,5 @@
 //
-var friends = [
+exports.friends = [
     {
       name: "Anna",
       photo: "",
